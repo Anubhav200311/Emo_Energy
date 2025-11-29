@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, BackgroundTasks, HTTPException, status
-from schemas.content import ContentCreate, ContentResponse, ContentListResponse
-from models.user import User
-from models.content import Content
-from utils.dependencies import get_current_user
+from app.schemas.content import ContentCreate, ContentResponse, ContentListResponse
+from app.models.user import User
+from app.models.content import Content
+from app.utils.dependencies import get_current_user
 from sqlalchemy.orm import Session
-from database import get_db
+from app.database import get_db
 
 router = APIRouter(prefix="/contents", tags = ["Contents"])
 

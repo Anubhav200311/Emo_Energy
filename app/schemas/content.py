@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from datetime import datetime
 from typing import Optional
-from models.content import SentimentEnum
+from app.models.content import SentimentEnum
 
 
 class ContentCreate(BaseModel):

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from routers import auth, content
-from config import settings
-from database import create_tables
+from app.routers import auth, content
+from app.config import settings
+from app.database import create_tables
 import logging
 
 app = FastAPI(
