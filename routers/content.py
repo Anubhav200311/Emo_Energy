@@ -44,7 +44,7 @@ async def create_content(
 async def get_all_contents(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
     """Retrieve all content submitted by the authenticated user."""
     contents = db.query(Content).filter(Content.user_id == current_user.user_id).all()
-    return {"totla": len(contents), "contents": contents}
+    return {"total": len(contents), "contents": contents}
 
 @router.get("/{content_id}", response_model=ContentResponse)
 async def get_content_by_id(
