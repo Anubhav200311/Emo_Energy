@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import auth
+from routers import auth, content
 from config import settings
 from database import create_tables
 import logging
@@ -19,7 +19,7 @@ async def startup_event():
 
 # Include Routers
 app.include_router(auth.router)
-
+app.include_router(content.router)
 @app.get("/")
 def read_root():
     return {"message": "Hello, World!"}
